@@ -3,19 +3,30 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        type: environment
-        description: Select the environment
-      boolean:
+      java:
         type: boolean
-        description: True or False
-      choice:
-        type: choice
-        description: Make a choice
-        options:
-        - foo
-        - bar
-        - baz
+        description: JAVA
+      dotnet:
+        type: boolean
+        description: DOTNET
+      python:
+        type: boolean
+        description: PYTHON
+      ruby:
+        type: boolean
+        description: RUBY
+      php:
+        type: boolean
+        description: PHP
+      ts:
+        type: boolean
+        description: TS
+      go:
+        type: boolean
+        description: GO
+      swift:
+        type: boolean
+        description: SWIFT
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +36,7 @@ jobs:
 
       - name: greet
         run: | 
-          echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
+          # echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
           echo "boolean is ${{ github.event.inputs.boolean }}" / ${{ inputs.boolean }} 
-          echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
+          # echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
           

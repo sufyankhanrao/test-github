@@ -34,7 +34,7 @@ on:
   workflow_dispatch:
     inputs:
       Version:
-        description: "This input field requires version in [format](https://www.google.com): x.y.z, where x => major version, y => minor version and z => patch version"
+        description: "This input field requires version in <https://www.google.com|format>: x.y.z, where x => major version, y => minor version and z => patch version"
         required: true
 jobs:
   build:

@@ -1,35 +1,41 @@
 name: CI
 
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
+#     inputs:
+#       java:
+#         type: boolean
+#         description: JAVA
+#       dotnet:
+#         type: boolean
+#         description: DOTNET
+#       python:
+#         type: boolean
+#         description: PYTHON
+#       ruby:
+#         type: boolean
+#         description: RUBY
+#       php:
+#         type: boolean
+#         description: PHP
+#       ts:
+#         type: boolean
+#         description: TS
+#       go:
+#         type: boolean
+#         description: GO
+#       swift:
+#         type: boolean
+#         description: SWIFT
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
-      java:
-        type: boolean
-        description: JAVA
-      dotnet:
-        type: boolean
-        description: DOTNET
-      python:
-        type: boolean
-        description: PYTHON
-      ruby:
-        type: boolean
-        description: RUBY
-      php:
-        type: boolean
-        description: PHP
-      ts:
-        type: boolean
-        description: TS
-      go:
-        type: boolean
-        description: GO
-      swift:
-        type: boolean
-        description: SWIFT
+      Version:
+        description: "This input field requires version in [format](https://www.google.com): x.y.z, where x => major version, y => minor version and z => patch version"
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
